@@ -1,0 +1,64 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Login and SignUp Form</title>
+    <link rel="stylesheet" href="{% static "web/css/user.css" %}">
+    {% include "web/partials/links.html" %}
+</head>
+
+<body>
+
+    {% include "web/partials/header.html" %}
+
+    <div class="body">
+
+    <!-- partial:index.partial.html -->
+        <div class="content">
+            <div class="container-user">
+                <div class="nav">
+                    <button class="btn btn1" id="btns1" onclick="showLogin()">Login</button>
+                </div>
+                <form action="" method="POST">
+                <div class="main">
+                    {% csrf_token %}
+                    <div id="login" class="loginClass">
+                        <input type="text" name="username" placeholder="Username" required><br>
+                        <input type="password" name="password" placeholder="Password"><br>
+                        <div class="enquire">
+                            <a href="#" class="a"><input type="checkbox" id="remember">Remember me</a>
+                            <a href="#" class="a">Forgot password?</a>
+                        </div><br>
+                        <button class="subBtn button" type="submit">LOGIN</button><br>
+                        <div class="gulugulu subBtn button">
+                            <div class="">
+                            <button>
+                                <a href="{% provider_login_url "google" %}" class="googleBtn">Google</a>
+                            </button>
+                            </div>
+                        </div>
+                        <div class="gulugulu subBtn button">
+                            <div class="">
+                            <button>
+                                <a href="{% provider_login_url "facebook" %}" class="googleBtn">Facebook</a>
+                            </button>
+                            </div>
+                        </div>
+                        <br>
+                        <a href="{% url "signup" %}"  class="a">No Account? Create one</a>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        <!-- partial -->
+
+    </div>
+
+</body>
+
+</html>

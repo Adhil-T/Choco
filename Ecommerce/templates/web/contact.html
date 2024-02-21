@@ -1,0 +1,68 @@
+{% load static %}
+
+{% include "web/partials/topLink.html" %}
+
+<body class="sub_page">
+
+  <div class="main_body_content">
+
+    <div class="hero_area">
+      <!-- header section strats -->
+      {% include "web/partials/header.html" %}
+      <!-- end header section -->
+    </div>
+
+
+    <!-- contact section -->
+
+    <section class="contact_section layout_padding">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5 col-lg-4 offset-md-1 offset-lg-2">
+            <div class="form_container">
+              <div class="heading_container">
+                <h2>
+                  Contact Us
+                </h2>
+              </div>
+              <form action="" method="POST">
+                {% csrf_token %}
+                <div>
+                  <input type="text" placeholder="Full Name " name="name">
+                </div>
+                <div>
+                  <input type="text" placeholder="Phone number" name="phone">
+                </div>
+                <div>
+                  <input type="email" placeholder="Email" name="email">
+                </div>
+                <div>
+                  <input type="text" class="message-box" placeholder="Message" name="message">
+                </div>
+                <div class="d-flex ">
+                  <button type="submit">
+                    SEND NOW
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6  px-0">
+            <div class="map_container">
+              <div class="map">
+                <div id="googleMap"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end contact section -->
+
+
+    <!-- info section -->
+    {% include "web/partials/footer.html" %}
+  <!-- footer section -->
+
+{% include "web/partials/bottomLink.html" %}

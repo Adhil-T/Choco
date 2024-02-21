@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Login and SignUp Form</title>
+  <link rel="stylesheet" href="{% static "web/css/user.css" %}">
+  {% include "web/partials/links.html" %}
+</head>
+<body>
+
+    {% include "web/partials/header.html" %}
+
+    <div class="body">
+        <!-- partial:index.partial.html -->
+        <div class="content">
+            <div class="container-user">
+                <div class="nav">
+                    <button class="btn btn1" id="btns1">Sign Up</button>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                <div class="main">
+                    <div id="login" class="loginClass">
+                            <input type="text" name="username" placeholder="Username" required><br>
+                            <input type="text" name="f_name" placeholder="First Name" required><br>
+                            <input type="text" name="l_name" placeholder="Last Name"><br>
+                            <input type="email" name="email" placeholder="Email" required><br>
+                            <input type="password" name="pass1" placeholder="Password" required><br>
+                            <input type="password" name="pass2" placeholder="Re type Password" required><br>
+                            <button type="submit" class="signBtn button">CREATE ACCOUNT</button>
+                            <br>
+                            <a href="{% url "login" %}" class="a">Already have an Account? Login</a>
+                            <br>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
